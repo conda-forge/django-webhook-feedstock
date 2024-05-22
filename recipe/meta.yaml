@@ -1,5 +1,5 @@
 {% set name = "django-webhook" %}
-{% set version = "0.0.8" %}
+{% set version = "0.0.11" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/django_webhook-{{ version }}.tar.gz
-  sha256: 4b49e5db8200cbbef2a2a2af1412c587ac88b2bb0f43dbe00cee2d73f8fcd182
+  sha256: a2c5190ff70e87ff9163eabd224194272f92286b585c40b5bb6e9dda02f89e51
 
 build:
   noarch: python
@@ -36,7 +36,7 @@ test:
 
 about:
   home: https://github.com/danihodovic/django-webhook/
-  summary: Django webhooks triggered on model changes 
+  summary: Django webhooks triggered on model changes
   doc_url: https://django-webhook.readthedocs.io/
   license: MIT
   license_file: LICENSE

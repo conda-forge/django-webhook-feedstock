@@ -1,5 +1,5 @@
 {% set name = "django-webhook" %}
-{% set version = "0.0.11" %}
+{% set version = "0.0.13" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/django_webhook-{{ version }}.tar.gz
-  sha256: a2c5190ff70e87ff9163eabd224194272f92286b585c40b5bb6e9dda02f89e51
+  sha256: 1b332346d00755cb6486bd132c1b381d2927270ad4cf42766aeb46ae7654f346
 
 build:
   noarch: python

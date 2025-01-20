@@ -1,3 +1,4 @@
+{% set python_min = '3.11.0' %}
 {% set name = "django-webhook" %}
 {% set version = "0.0.14" %}
 
@@ -6,21 +7,21 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/django_webhook-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/django_webhook-{{ version }}.tar.gz
   sha256: bcf1e15b1341c5bfef886b715ab376aa5a8432ed06ea654703a8257c7b4f05c5
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.11,<4.0
+    - python {{ python_min }}
     - poetry >=0.12
     - pip
   run:
-    - python >=3.11.0,<4.0.0
+    - python >={{ python_min }},<4.0.0
     - django >=4.0,<6.0
     - django-model-utils >=4.0,<5.0
     - celery >=5.0,<6.0
@@ -33,6 +34,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/danihodovic/django-webhook/
